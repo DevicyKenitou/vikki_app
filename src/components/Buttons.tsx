@@ -7,7 +7,7 @@ import {
     Avatar,
 } from "react-native-paper";
 
-export function Buttons1({ title, bgColor, onPress, imgSrc, style }) {
+export function Buttons1({ title, bgColor, onPress, imgSrc, style=null }) {
     return (
         <View
             style={{
