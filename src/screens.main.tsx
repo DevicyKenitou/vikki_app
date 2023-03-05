@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Image, TextInput, View } from "react-native";
-import { Buttons1 } from "./components/Buttons";
+import { Buttons1 } from "./components/Buttons.ssx";
 import { VIKKI_Come, VIKKI_Emergency, VIKKI_Heartbeat, VIKKI_Temperature } from "./services.server";
 
 export function MainScreen(){
@@ -15,7 +15,7 @@ export function MainScreen(){
         }}>
             <Image
                 style={{ width : 200, height: 200, marginBottom: 20}}
-                source={require("./assets/vikki.png")} 
+                source={require("vikki/src/assets/vikki.png")} 
             />
 
             

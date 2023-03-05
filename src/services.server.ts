@@ -1,4 +1,5 @@
 import { Alert } from "react-native";
+import { Snackbar } from "react-native-paper";
 
 export async function Request(IP, args){
     try{
@@ -8,26 +9,25 @@ export async function Request(IP, args){
         console.log(await resp.text())
     }catch(err){
         console.log(err);
-        Alert.alert(
-            'Erreur serveur',
-            "Requête : \"" + (IP + encodeURIComponent(args)) + "\"\n\n" +
-            err.toString()
-        )
+
+        return {
+            errorMsg : "La commande \"" + (IP + encodeURIComponent(args)) + "\" a échouée.\n\n" + err.toString()
+        }
     }
 }
 
 export async function VIKKI_Come(IP){
-    await Request(IP, 'viens');
+    return await Request(IP, 'viens');
 }
 
 export async function VIKKI_Temperature(IP){
-    await Request(IP, 'température');
+    return await Request(IP, 'température');
 }
 
 export async function VIKKI_Heartbeat(IP){
-    await Request(IP, 'pouls');
+    return await Request(IP, 'pouls');
 }
 
 export async function VIKKI_Emergency(IP){
-    await Request(IP, 'urgence');
+    return await Request(IP, 'urgence');
 }
