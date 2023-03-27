@@ -25,7 +25,7 @@ export async function VIKKI_Temperature(IP){
 }
 
 export async function VIKKI_Heartbeat(IP){
-    return await Request(IP, 'pouls');
+    return await Request(IP, 'cardiaque');
 }
 
 export async function VIKKI_Emergency(IP){

@@ -1,7 +1,7 @@
 //@ts-check
 
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image } from "react-native";
 import { SendSMS } from "vikki/src/services/sms";
 
 export default function SMSTest(){
@@ -11,10 +11,26 @@ export default function SMSTest(){
             alignItems: 'center',
             justifyContent: 'center'
         }}>
-            <Text>SMSTest</Text>
+
+            <Image
+                source={require('vikki/src/assets/tab-icons/emergency_on.png')}
+                style={{
+                    width: 70,
+                    height: 70,
+                    marginBottom: 80,
+                }}
+            />
+
             <Button
-                title="Envoyer SMS"
+                title="Appeler les urgences"
                 onPress={SendSMS}
+                color="#EF4844"
+            />
+            <View style={{ marginBottom: 30 }} />
+            <Button
+                title="Contacter le personnel médical"
+                onPress={SendSMS}
+                color="#6c9ef7"
             />
         </View>
     )

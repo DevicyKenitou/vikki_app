@@ -43,6 +43,11 @@ export function ActionsScreen() {
 
     return (
         <View>
+            <TextInput
+                label="IP"
+                value={IP}
+                onChangeText={(text) => setIP("http://" + text + ":8080/")}
+            />
             <FlatList
                 contentContainerStyle={{
                     backgrundColor: "#fff",
